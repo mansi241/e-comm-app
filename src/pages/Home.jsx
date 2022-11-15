@@ -35,13 +35,14 @@ export default function Home() {
     // <div>
     //     <pre>{JSON.stringify(products, null, 2)}</pre>
     // </div>
+    //xs={12}  md={3} sm={6} -> for xs take 12 columns for each card
 
     <Container sx={{py:8}} maxWidth="lg">
         <Grid container spacing={4}>
             {
                 filteredProducts?.map(({title, id, price, description,rating, image})=>{
-                    return <Grid item key={id} xs={12}  md={3} sm={6}>
-                                    <Card sx={{ height: "100%", display: 'flex', flexDirection: 'column' }}>
+                    return <Grid item key={id} xs={12}  md={3} sm={6}>   
+                                    <Card sx={{ height: "100%", display: 'flex', flexDirection: 'column', padding:theme.spacing(2,0) }}>
                                         <CardMedia
                                             sx={{alignSelf:'center', width:theme.spacing(30), height:theme.spacing(30), objectFit:'content', pt:theme.spacing()}}
                                             component="img"
